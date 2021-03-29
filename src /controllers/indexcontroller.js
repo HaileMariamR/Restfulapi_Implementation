@@ -40,3 +40,13 @@ export const updateUser = (req,res)=>{
     });
 
 }
+export const deleteUser = (req,res)=>{
+    Contact.remove({_id:req.params.conatactID}, (err,user)=>{
+        if (err){
+            res.send(err)
+        };
+        res.json({message: "successfully deleted contact"}); 
+    });
+
+}
+

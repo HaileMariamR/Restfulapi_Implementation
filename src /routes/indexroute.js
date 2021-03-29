@@ -1,4 +1,4 @@
-import { createUser , getUser , getUserwithId , updateUser} from '../controllers/indexcontroller'
+import { createUser , getUser , getUserwithId , updateUser , deleteUser} from '../controllers/indexcontroller'
 
 
 export const routes = (app)=>{
@@ -13,10 +13,8 @@ export const routes = (app)=>{
     app.route('/contact/:conatactID')
        .get(getUserwithId)
        .put(updateUser)
-       .delete((req, res)=>{
-
-        res.send('delete request Successfully')
-       });
+       .delete(deleteUser);
 
 }
+
 
