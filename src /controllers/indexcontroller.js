@@ -30,3 +30,13 @@ export const getUserwithId = (req,res)=>{
     });
 
 }
+
+export const updateUser = (req,res)=>{
+    Contact.findOneAndUpdate({_id:req.params.conatactID},req.body,{ new:true,   useFindAndModify:false  }, (err,user)=>{
+        if (err){
+            res.send(err)
+        };
+        res.json(user);
+    });
+
+}
