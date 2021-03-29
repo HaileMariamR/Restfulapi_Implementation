@@ -1,4 +1,4 @@
-import { createUser , getUser } from '../controllers/indexcontroller'
+import { createUser , getUser , getUserwithId} from '../controllers/indexcontroller'
 
 
 export const routes = (app)=>{
@@ -11,6 +11,7 @@ export const routes = (app)=>{
        }, getUser)
        .post(createUser);
     app.route('/contact/:conatactID')
+       .get(getUserwithId)
        .put((req, res)=>{
          res.send('put request Successfully')
        })

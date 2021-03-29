@@ -21,3 +21,12 @@ export const getUser = (req,res)=>{
     });
 
 }
+export const getUserwithId = (req,res)=>{
+    Contact.findById(req.params.conatactID, (err,user)=>{
+        if (err){
+            res.send(err)
+        };
+        res.json(user);
+    });
+
+}
