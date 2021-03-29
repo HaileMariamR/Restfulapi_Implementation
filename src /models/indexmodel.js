@@ -3,19 +3,28 @@ const Schema = mongoose.Schema;
 
 export const contactSchema = new Schema({
     firstName :{
-        type:String
+        type:String,
+        required:true
     },
     lastName :{
-        type:String
+        type:String,
+        required:true
+
     },
     email :{
-        type:String
+        type:String,
+        required: true 
+
     },
     company :{
-        type:String
+        type:String,
+        required:true 
+
     },
     phoneNumber :{
-        type:Number
+        type:Number,
+        required:true
+
     },
     createdDate:{
         type : Date,

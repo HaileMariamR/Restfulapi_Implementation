@@ -1,7 +1,6 @@
 import mongoose from 'mongoose'
 import  { contactSchema} from '../models/indexmodel'
-const Contact = mongoose.model('Contact' , contactSchema);
-
+const Contact = mongoose.model('contact' , contactSchema);  
 export const createUser = (req,res)=>{
     let newContact = new Contact(req.body);
 
@@ -11,7 +10,4 @@ export const createUser = (req,res)=>{
         };
         res.json(user);
     });
-};
-
-
-
+}
