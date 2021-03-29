@@ -11,3 +11,13 @@ export const createUser = (req,res)=>{
         res.json(user);
     });
 }
+
+export const getUser = (req,res)=>{
+    Contact.find({}, (err,user)=>{
+        if (err){
+            res.send(err)
+        };
+        res.json(user);
+    });
+
+}

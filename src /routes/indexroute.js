@@ -1,4 +1,4 @@
-import { createUser } from '../controllers/indexcontroller'
+import { createUser , getUser } from '../controllers/indexcontroller'
 
 
 export const routes = (app)=>{
@@ -8,10 +8,7 @@ export const routes = (app)=>{
            console.log(`request from ${req.originalUrl}`);
            console.log(`request method ${req.method}`);
            next();
-       }, (req,res, next)=>{
-        res.render('contact.pug')
-
-       })
+       }, getUser)
        .post(createUser);
     app.route('/contact/:conatactID')
        .put((req, res)=>{
